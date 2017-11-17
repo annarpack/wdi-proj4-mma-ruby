@@ -1,0 +1,16 @@
+  <div class="container">
+
+<h1>Saved Fights</h1>
+
+
+<div>
+  <h3><%= @fight[:title] %> </h3>
+  <h5><%= @fight[:tagline] %> </h5>
+  <%= image_tag @fight[:image] %> <br />
+  <%= @fight[:date] %>  <br />
+  <%= @fight[:start_time] %> <br />
+  <%= @fight[:ticketurl] %> <br />
+
+    <%= button_to('Delete', @fight, :method => 'delete') %>
+</div>
+</div>

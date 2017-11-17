@@ -1,0 +1,2 @@
+module FighterDatumHelper
+end

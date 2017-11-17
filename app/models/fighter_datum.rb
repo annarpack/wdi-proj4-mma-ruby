@@ -1,0 +1,2 @@
+class FighterDatum < ApplicationRecord
+end

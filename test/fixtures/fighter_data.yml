@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  full_name: MyString
+  first_name: MyString
+  last_name: MyString
+  wins: 1
+  losses: 1
+  weight_class: MyString
+  image: MyString
+
+two:
+  full_name: MyString
+  first_name: MyString
+  last_name: MyString
+  wins: 1
+  losses: 1
+  weight_class: MyString
+  image: MyString

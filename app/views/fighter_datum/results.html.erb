@@ -1,0 +1,50 @@
+<%= stylesheet_link_tag "event_calendar.css" %>
+<%= stylesheet_link_tag "application.css" %>
+<body>
+  <div class="content">
+    <nav>
+      <ul>
+        <li><%= image_tag("Logo-2.png") %></li>
+        <li class="box"><%= link_to("Fights", fights_path) %></li>
+        <li class="box"><%= link_to("Search Fights", fights_search_path) %></li>
+        <li class="box"><%= link_to("Fighters", fighters_path) %></li>
+        <li class="box"><%= link_to("Search Fighters", fighters_search_path) %></li>
+        <li class="box"><%= link_to("Logout", logout_path, method: "delete", class: "logout") %></li>
+      </ul>
+    </nav>
+<div class="container">
+
+
+<h1>Results for Fighters</h1>
+
+<%= form_for :fighters, url: fighters_search_path do |f| %>
+
+  <%= f.submit "search" %>
+<% end %>
+
+<% @data.each do |result| %>
+<div class="fighter">
+  <h2><%= result[:first_name] %> <%= result[:last_name] %> </h2>
+    <%= image_tag result[:image] %> <br />
+  Weight Class: <%= result[:weight_class] %> <br />
+  Wins: <%= result[:wins] %> <br />
+  Losses: <%= result[:losses] %> <br />
+
+  <%= form_for :fighter, url: fighters_path, method: "post" do |f| %>
+    <%= f.hidden_field :first_name, value: result[:first_name] %>
+    <%= f.hidden_field :last_name, value: result[:last_name] %>
+    <%= f.hidden_field :weight_class, value: result[:weight_class] %>
+    <%= f.hidden_field :image, value: result[:image] %>
+    <%= f.hidden_field :wins, value: result[:wins] %>
+    <%= f.hidden_field :losses, value: result[:losses] %>
+    <%= f.submit "Save Fighter" %>
+  <% end %>
+
+
+<% end %>
+
+</div>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,208 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+body {
+  margin: 0;
+  background-image: url('/images/image-1.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.content {
+  background-color: rgba(0,0,0, 0.6);
+  height: 100%;
+  min-height: auto;
+}
+nav ul {
+  display: flex;
+  top: 0;
+  padding: 0;
+  margin-top: 0;
+  background-color: #D11400;
+  align-items: flex-start;
+  min-height: 2em;
+  font-size: 1.25em;
+
+}
+
+nav ul li {
+  flex-direction: row;
+  align-items: center;
+  list-style: none;
+  justify-content: space-around;
+  margin-top: 1em;
+  margin-bottom: 1em;
+
+}
+
+nav ul li.box {
+  width: auto;
+  background-color: white;
+  border: 3px solid  #696969;
+  transform: skewX(-20deg);
+  align-content: center;
+  padding: 12px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
+  justify-content: flex-end;
+}
+nav ul li a,
+nav ul li a:visited {
+  justify-content: space-around;
+  align-items: flex-start;
+  text-transform: uppercase;
+  font-weight: 500px;
+  color: black;
+  padding: 15px;
+  margin-top: 15px;
+  text-decoration: none;
+  transform: skewX(60deg);
+  margin-left: -14px;
+  margin-right: -14px;
+}
+nav ul li a:hover {
+  color: black;
+  background-color: rgba(105,105,105,0.6);
+
+}
+
+.container {
+  margin: 0 auto;
+  width: 80%;
+  background-color: white;
+  border-radius: 25px;
+}
+.container h1 {
+  width: auto;
+  padding: 1.5em;
+  background-color: #696969;
+  color: black;
+  border-radius: 25px 25px 0 0;
+}
+.user-page {
+  margin: 0 auto;
+  margin-top: 50px;
+  align-items: center;
+  text-align: center;
+  width: 50%;
+  background-color: black;
+  border-radius: 25px;
+  color: white;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+.user-page img {
+  max-height: 200px;
+  width: auto;
+}
+.user-page h1 {
+  margin-top: 50px;
+  text-transform: uppercase;
+}
+.user-page label {
+  font-size: 14px;
+  text-transform: uppercase;
+}
+.user-page button,
+.user-page input[type=submit] ,
+input[type=submit] {
+  width: 300px;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 10px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  font-size: 16px;
+  display: block;
+  align-items: center;
+    text-align: center;
+    cursor: default;
+    color: black;
+    background-color: #D11400;
+    box-sizing: inherit;
+    text-transform: uppercase;
+}
+.user-page input[type=text],
+.user-page input[type=email] ,
+.user-page input[type=password] ,
+input[type=search] {
+  width: 300px;
+  border-radius: 10px;
+  align-items: center;
+    text-align: center;
+    padding: 10px;
+    margin: 10px;
+    margin: 0 auto;
+    font-size: 16px;
+    display: block;
+    border: 3px solid  #696969;
+}
+input[type=submit]#serach,
+input[type=search]#serach {
+  margin-top: 20px;
+  display: inline-block;
+  align-items: flex-start;
+    margin:0;
+
+}
+.search-form {
+height: auto;
+}
+#search-form{
+  height: auto;
+  min-height: 300px;
+}
+
+.ui-helper-hidden-accessible {
+  position: absolute;
+  top: 210px;
+  left: 200px;
+    align-items: flex-start;
+      background-color: white;
+      width: 300px;
+}
+ul#ui-id-1,
+.fighter-search-results {
+  background-color: white;
+  max-width: auto;
+  left: 0;
+  margin: 0;
+    align-items: flex-start;
+}
+.ui-menu,
+ul#ui-id-1,
+li.ui-menu-item,
+.ui-menu-item-wrapper {
+  min-width: 400px;
+  display: relative;
+  list-style: none;
+  width: 300px;
+  align-items: flex-start;
+    left: 0;
+  background-color: white;
+  margin-left:-225px;
+    margin-right: 0;
+    padding-left: 100px;
+    padding-right: 50px;
+}
+
+.fighter {
+  text-align: center;
+  margin: 0 auto;
+  align-content: center;
+}

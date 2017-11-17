@@ -1,0 +1,20 @@
+  <div class="container">
+
+<h1>Saved Fighters</h1>
+
+<%= button_to("Search for a Fighter", fighters_search_path, method: 'get') %>
+
+<% @fighters.each do |fighter| %>
+<div class="fighter">
+<h3>  <%= link_to(fighter[:first_name]+' '+fighter[:last_name], fighter_path(fighter)) %> </h3>
+
+  <%= image_tag fighter[:image] %> <br />
+  Weight Class:  <%= fighter[:weight_class] %> <br />
+  Wins: <%= fighter[:wins] %> <br />
+  Losses: <%= fighter[:losses] %> <br />
+
+  <%= button_to('Delete '+fighter[:first_name]+' '+fighter[:last_name], fighter, :method => 'delete') %>
+</div>
+<% end %>
+
+</div>

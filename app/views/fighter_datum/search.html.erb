@@ -1,0 +1,58 @@
+<%= stylesheet_link_tag "event_calendar.css" %>
+<%= stylesheet_link_tag "application.css" %>
+<%= javascript_include_tag "https://code.jquery.com/jquery-1.12.4.js" %>
+<%= javascript_include_tag "https://code.jquery.com/ui/1.12.1/jquery-ui.js" %>
+<body>
+  <div class="content">
+    <nav>
+      <ul>
+        <li><%= image_tag("Logo-2.png") %></li>
+        <li class="box"><%= link_to("Fights", fights_path) %></li>
+        <li class="box"><%= link_to("Search Fights", fights_search_path) %></li>
+        <li class="box"><%= link_to("Fighters", fighters_path) %></li>
+        <li class="box"><%= link_to("Search Fighters", fighters_search_path) %></li>
+        <li class="box"><%= link_to("Logout", logout_path, method: "delete", class: "logout") %></li>
+      </ul>
+    </nav>
+<div class="container">
+
+
+<h1>Search for Fighters</h1>
+
+<% full_names = [] %>
+<% @results.each do |result| %>
+<%  full_names << result[:full_name] %>
+<% end %>
+
+<%= content_tag :div, class: "results_information", data: {names: full_names} do %>
+<% end %>
+<br /> <br />
+<div class="search-form">
+<%= form_tag(fighters_results_path, :method => "get", id: "search-form") do %>
+<!-- text field tag=action,args,identifier,placeholdertext... -->
+<%= text_field_tag :search, params[:search], class: "search-query", placeholder: "namesearch", type: "search" %>
+<%= submit_tag "Search" %>
+<% end %>
+
+
+<script type="text/javascript" charset="utf-8">
+ var values = $('.results_information').data('names');
+
+  $('.search-query' ).autocomplete({
+        minLength: 0,
+        source: values,
+      })
+      .autocomplete( "instance" )._renderItem = function( ul, item ) {
+        return $( "<li>" )
+          .append( "<div>" + item.value + "</div>" )
+          .appendTo( ul );
+      };
+
+
+</script>
+
+</div>
+</div>
+</div>
+</body>
+</html>
