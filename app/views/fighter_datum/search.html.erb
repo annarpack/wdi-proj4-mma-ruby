@@ -1,20 +1,9 @@
-<%= stylesheet_link_tag "event_calendar.css" %>
-<%= stylesheet_link_tag "application.css" %>
+
 <%= javascript_include_tag "https://code.jquery.com/jquery-1.12.4.js" %>
-<%= javascript_include_tag "https://code.jquery.com/ui/1.12.1/jquery-ui.js" %>
-<body>
-  <div class="content">
-    <nav>
-      <ul>
-        <li><%= image_tag("Logo-2.png") %></li>
-        <li class="box"><%= link_to("Fights", fights_path) %></li>
-        <li class="box"><%= link_to("Search Fights", fights_search_path) %></li>
-        <li class="box"><%= link_to("Fighters", fighters_path) %></li>
-        <li class="box"><%= link_to("Search Fighters", fighters_search_path) %></li>
-        <li class="box"><%= link_to("Logout", logout_path, method: "delete", class: "logout") %></li>
-      </ul>
-    </nav>
-<div class="container">
+
+<%= javascript_include_tag 'autocomplete.js', 'data-turbolinks-track': 'reload' %>
+
+
 
 
 <h1>Search for Fighters</h1>
@@ -43,6 +32,7 @@
         source: values,
       })
       .autocomplete( "instance" )._renderItem = function( ul, item ) {
+        ( ul ).addClass('content')
         return $( "<li>" )
           .append( "<div>" + item.value + "</div>" )
           .appendTo( ul );
@@ -52,7 +42,3 @@
 </script>
 
 </div>
-</div>
-</div>
-</body>
-</html>

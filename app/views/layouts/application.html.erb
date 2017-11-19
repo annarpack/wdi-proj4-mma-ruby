@@ -3,11 +3,11 @@
   <head>
     <title>MmaApp</title>
     <%= csrf_meta_tags %>
-<%= stylesheet_link_tag "event_calendar.css" %>
+    <%= stylesheet_link_tag "event_calendar.css" %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
       <%= javascript_include_tag "https://code.jquery.com/jquery-1.12.4.js" %>
-      <%= javascript_include_tag "https://code.jquery.com/ui/1.12.1/jquery-ui.js" %>
 
+  <%= javascript_include_tag 'autocomplete', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
@@ -15,7 +15,7 @@
     <div class="content">
     <nav>
       <ul>
-        <li><%= image_tag("Logo-2.png") %></li>
+        <li class="logo"><%= image_tag("Logo-2.png") %></li>
         <li class="box"><%= link_to("Fights", fights_path) %></li>
         <li class="box"><%= link_to("Search Fights", fights_search_path) %></li>
         <li class="box"><%= link_to("Fighters", fighters_path) %></li>
@@ -23,9 +23,9 @@
         <li class="box"><%= link_to("Logout", logout_path, method: "delete", class: "logout") %></li>
       </ul>
     </nav>
-
+<div class="container">
     <%= yield %>
-
+</div>
 </div>
   </body>
 </html>

@@ -7,6 +7,7 @@ class CreateFighters < ActiveRecord::Migration[5.1]
       t.integer :losses
       t.string :weight_class
       t.string :image
+      t.integer :user_id
 
       t.timestamps
     end

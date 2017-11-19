@@ -7,6 +7,7 @@ class CreateFights < ActiveRecord::Migration[5.1]
       t.string :arena
       t.string :image
       t.string :ticket_url
+      t.integer :user_id
 
       t.timestamps
     end

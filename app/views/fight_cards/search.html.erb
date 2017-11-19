@@ -4,7 +4,7 @@
   <div class="content">
     <nav>
       <ul>
-        <li><%= image_tag("Logo-2.png") %></li>
+        <li class="logo"><%= image_tag("Logo-2.png") %></li>
         <li class="box"><%= link_to("Fights", fights_path) %></li>
         <li class="box"><%= link_to("Search Fights", fights_search_path) %></li>
         <li class="box"><%= link_to("Fighters", fighters_path) %></li>
@@ -36,6 +36,7 @@
       <%= f.hidden_field :arena, value: result[:arena] %>
       <%= f.hidden_field :image, value: result[:image] %>
       <%= f.hidden_field :ticket_url, value: result[:ticket_url] %>
+      <%= f.hidden_field :user_id, value: @current_user.id %>
       <%= f.submit "Save Fight Card" %>
     </div>
     <% end %>

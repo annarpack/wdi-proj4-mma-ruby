@@ -10,10 +10,12 @@ class FightersController < ApplicationController
     end
   end
   def index
-    @fighters = Fighter.all
+    @user = @current_user.id
+    @fighters = Fighter.where(user_id: @user)
   end
   def show
-    @fighter = Fighter.find(params[:id])
+    @user = @current_user.id
+    @fighter = Fighter.where(user_id: @user, id: params[:id])
 
   end
 
@@ -25,6 +27,6 @@ class FightersController < ApplicationController
 
   private
   def fighter_params
-    params.require(:fighter).permit(:first_name, :last_name, :weight_class, :wins, :losses, :image)
+    params.require(:fighter).permit(:first_name, :last_name, :weight_class, :wins, :losses, :image, :user_id)
   end
 end

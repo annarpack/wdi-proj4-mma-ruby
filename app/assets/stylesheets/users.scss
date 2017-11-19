@@ -1,3 +1,87 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.container {
+  margin: 0 auto;
+  width: 50%;
+  height: auto;
+  min-height: 100%;
+  background-color: black;
+  border-radius: 25px;
+    padding-bottom: 50px;
+}
+.container h1 {
+  width: auto;
+  padding: 1.5em;
+  background-color: #696969;
+  color: black;
+  border-radius: 25px 25px 0 0;
+
+}
+.user-page {
+  margin: 0 auto;
+  margin-top: 50px;
+  align-items: center;
+  text-align: center;
+  width: 50%;
+  background-color: black;
+  border-radius: 25px;
+  color: white;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+.user-page img {
+  max-height: 200px;
+  width: auto;
+}
+.user-page h1 {
+  margin-top: 50px;
+  text-transform: uppercase;
+}
+.user-page label {
+  font-size: 14px;
+  text-transform: uppercase;
+}
+.user-page button,
+.user-page input[type=submit] ,
+input[type=submit] {
+  width: 300px;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 10px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  font-size: 16px;
+  display: block;
+  align-items: center;
+    text-align: center;
+    cursor: default;
+    color: black;
+    background-color: #D11400;
+    box-sizing: inherit;
+    text-transform: uppercase;
+}
+.user-page input[type=text],
+.user-page input[type=email] ,
+.user-page input[type=password] ,
+input[type=search] {
+  width: 300px;
+  border-radius: 10px;
+  align-items: center;
+    text-align: center;
+    padding: 10px;
+    margin: 10px;
+    margin: 0 auto;
+    font-size: 16px;
+    display: block;
+    border: 3px solid  #696969;
+}
+input[type=submit]#serach,
+input[type=search]#serach {
+  margin-top: 20px;
+  display: inline-block;
+  align-items: flex-start;
+    margin:0;
+
+}

@@ -1,18 +1,6 @@
-<%= stylesheet_link_tag "event_calendar.css" %>
-<%= stylesheet_link_tag "application.css" %>
-<body>
-  <div class="content">
-    <nav>
-      <ul>
-        <li><%= image_tag("Logo-2.png") %></li>
-        <li class="box"><%= link_to("Fights", fights_path) %></li>
-        <li class="box"><%= link_to("Search Fights", fights_search_path) %></li>
-        <li class="box"><%= link_to("Fighters", fighters_path) %></li>
-        <li class="box"><%= link_to("Search Fighters", fighters_search_path) %></li>
-        <li class="box"><%= link_to("Logout", logout_path, method: "delete", class: "logout") %></li>
-      </ul>
-    </nav>
-<div class="container">
+<%= javascript_include_tag "https://code.jquery.com/jquery-1.12.4.js" %>
+<%= javascript_include_tag "https://code.jquery.com/ui/1.12.1/jquery-ui.js" %>
+
 
 
 <h1>Results for Fighters</h1>
@@ -37,6 +25,7 @@
     <%= f.hidden_field :image, value: result[:image] %>
     <%= f.hidden_field :wins, value: result[:wins] %>
     <%= f.hidden_field :losses, value: result[:losses] %>
+    <%= f.hidden_field :user_id, value: @current_user.id %>
     <%= f.submit "Save Fighter" %>
   <% end %>
 
@@ -44,7 +33,3 @@
 <% end %>
 
 </div>
-</div>
-</div>
-</body>
-</html>

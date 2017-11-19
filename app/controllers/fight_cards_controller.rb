@@ -1,5 +1,6 @@
 class FightCardsController < ApplicationController
   before_action :require_user
+    
       def initialize
         url = "http://ufc-data-api.ufc.com/api/v1/us/events"
         results = HTTParty.get(url)

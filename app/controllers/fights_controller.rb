@@ -1,5 +1,6 @@
 class FightsController < ApplicationController
       before_action :require_user
+
     def create
       @fight =  Fight.new(fight_params)
       if @fight.save
@@ -9,12 +10,14 @@ class FightsController < ApplicationController
       end
     end
     def index
+      @user = @current_user.id
       @date = Date.today
       @start_date = params[:start_date]
-      @fights = Fight.all
+      @fights = Fight.where(user_id: @user)
     end
     def show
-      @fight = Fight.find(params[:id])
+      @user = @current_user.id
+      @fight = Fight.where(user_id: @user, id: params[:id])
 
     end
     def destroy
@@ -25,6 +28,6 @@ class FightsController < ApplicationController
 
     private
     def fight_params
-      params.require(:fight).permit(:title, :tagline, :start_time, :arena, :image, :ticket_url)
+      params.require(:fight).permit(:title, :tagline, :start_time, :arena, :image, :ticket_url, :user_id)
     end
   end

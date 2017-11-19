@@ -1,8 +1,6 @@
 class FighterDatumController < ApplicationController
-
-  def initialize
-
-end
+  before_action :require_user
+  
 
   def search
     url = "http://ufc-data-api.ufc.com/api/v1/us/fighters"

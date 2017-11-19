@@ -48,7 +48,7 @@
   }
 
   .day {
-    height: 80px;
+    height: 150px;
   }
 
   .wday-0 {}
@@ -78,7 +78,9 @@
 
   .has-events {}
 }
-
+.simple-calendar {
+  margin-bottom: 25px;
+}
 .simple-calendar .calendar-heading {
   text-transform: uppercase;
   text-align: center;

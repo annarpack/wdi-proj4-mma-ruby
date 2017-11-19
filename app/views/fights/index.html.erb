@@ -1,7 +1,9 @@
-  <div class="container">
+
 <h1>Saved Events</h1>
 
 <%= button_to("Search for Fight Card Events", controller: "fight_cards", action: "search", start_date: @date) %>
+
+<%= @user %>
 <div class="simple_calendar">
 <%= month_calendar events: @fights do |date, fights| %>
   <%= date.day %>
@@ -14,5 +16,4 @@
     </div>
   <% end %>
 <% end %>
-</div>
 </div>
