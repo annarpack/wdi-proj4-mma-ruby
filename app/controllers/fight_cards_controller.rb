@@ -1,6 +1,6 @@
 class FightCardsController < ApplicationController
   before_action :require_user
-    
+
       def initialize
         url = "http://ufc-data-api.ufc.com/api/v1/us/events"
         results = HTTParty.get(url)
@@ -10,6 +10,7 @@ class FightCardsController < ApplicationController
           title: result["base_title"],
           tagline: result["title_tag_line"],
           start_time: result["event_date"],
+          event_time: result["event_time_text"],
           arena: result["arena"],
           image: result["feature_image"],
           ticket_url: result["ticketurl"])

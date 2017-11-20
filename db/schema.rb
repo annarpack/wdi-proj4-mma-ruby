@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171119204222) do
+ActiveRecord::Schema.define(version: 20171120193130) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20171119204222) do
     t.string "title"
     t.string "tagline"
     t.datetime "start_time"
+    t.string "event_time"
     t.string "arena"
     t.string "image"
     t.string "ticket_url"
@@ -63,6 +64,7 @@ ActiveRecord::Schema.define(version: 20171119204222) do
     t.string "title"
     t.string "tagline"
     t.datetime "start_time"
+    t.string "event_time"
     t.string "arena"
     t.string "image"
     t.string "ticket_url"

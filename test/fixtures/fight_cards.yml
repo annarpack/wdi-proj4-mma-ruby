@@ -3,7 +3,8 @@
 one:
   title: MyString
   tagline: MyString
-  start_time: 2017-11-16 16:00:34
+  start_time: 2017-11-20 14:31:30
+  event_time: MyString
   arena: MyString
   image: MyString
   ticket_url: MyString
@@ -11,7 +12,8 @@ one:
 two:
   title: MyString
   tagline: MyString
-  start_time: 2017-11-16 16:00:34
+  start_time: 2017-11-20 14:31:30
+  event_time: MyString
   arena: MyString
   image: MyString
   ticket_url: MyString

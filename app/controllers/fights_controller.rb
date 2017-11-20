@@ -19,6 +19,10 @@ class FightsController < ApplicationController
       @user = @current_user.id
       @id = params[:id]
       @fight = Fight.where(user_id: @user, id: @id).first
+      @start = @fight.start_time
+      value = @start.to_s
+      @date_value = value.split(' ')
+      @date = @date_value[0].to_s
 
     end
     def destroy
@@ -29,6 +33,6 @@ class FightsController < ApplicationController
 
     private
     def fight_params
-      params.require(:fight).permit(:title, :tagline, :start_time, :arena, :image, :ticket_url, :user_id)
+      params.require(:fight).permit(:title, :tagline, :start_time, :event_time, :arena, :image, :ticket_url, :user_id)
     end
   end
