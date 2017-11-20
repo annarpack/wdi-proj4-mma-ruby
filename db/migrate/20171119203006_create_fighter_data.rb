@@ -6,8 +6,12 @@ class CreateFighterData < ActiveRecord::Migration[5.1]
       t.string :last_name
       t.integer :wins
       t.integer :losses
+      t.integer :draws
       t.string :weight_class
+      t.string :status
+      t.boolean :title_holder
       t.string :image
+      t.string :belt_thumbnail
 
       t.timestamps
     end

@@ -17,7 +17,8 @@ class FightsController < ApplicationController
     end
     def show
       @user = @current_user.id
-      @fight = Fight.where(user_id: @user, id: params[:id])
+      @id = params[:id]
+      @fight = Fight.where(user_id: @user, id: @id).first
 
     end
     def destroy

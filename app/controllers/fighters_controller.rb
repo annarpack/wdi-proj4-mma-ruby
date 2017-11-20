@@ -15,7 +15,7 @@ class FightersController < ApplicationController
   end
   def show
     @user = @current_user.id
-    @fighter = Fighter.where(user_id: @user, id: params[:id])
+    @fighter = Fighter.where(user_id: @user, id: params[:id]).first
 
   end
 
@@ -27,6 +27,6 @@ class FightersController < ApplicationController
 
   private
   def fighter_params
-    params.require(:fighter).permit(:first_name, :last_name, :weight_class, :wins, :losses, :image, :user_id)
+    params.require(:fighter).permit(:full_name, :first_name, :last_name, :weight_class, :title_holder, :wins, :losses, :draws, :status, :image, :belt_thumbnail, :user_id)
   end
 end

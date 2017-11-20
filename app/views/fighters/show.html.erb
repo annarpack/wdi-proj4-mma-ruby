@@ -1,11 +1,20 @@
-
+<%= stylesheet_link_tag "fights.css" %>
 <h1>Saved Fighters</h1>
 <%= button_to("All Saved Fighters", fighters_path, method: 'get') %>
-<div class="fighter">
-<%= image_tag @fighter[:image] %>
-<h3><%= @fighter[:first_name] %> <%= @fighter[:last_name] %> </h3>
-Weight Class: <%= @fighter[:weight_class] %> <br />
-Wins: <%= @fighter[:wins] %> <br />
-Losses: <%= @fighter[:losses] %> <br />
 
+<div class="fighter">
+<h3>  <%= @fighter[:full_name] %> </h3>
+
+<% if @fighter[:title_holder] %>
+<h3><%= @fighter[:weight_class] %> Champion</h3>
+  <%= image_tag @fighter[:belt_thumbnail] %> <br />
+<% else %>
+  <%= image_tag @fighter[:image] %> <br />
+<% end %>
+  Status: <%= @fighter[:status] %> <br />
+  Weight Class:  <%= @fighter[:weight_class] %> <br />
+  <%= @fighter[:wins] %> WINS /  <%= @fighter[:losses] %> LOSSES / <%= @fighter[:draws] %> DRAWS<br />
+<br />
+
+  <%= button_to('Delete '+@fighter[:full_name], @fighter, :method => 'delete') %>
 </div>

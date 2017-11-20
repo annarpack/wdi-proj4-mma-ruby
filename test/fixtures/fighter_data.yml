@@ -6,8 +6,12 @@ one:
   last_name: MyString
   wins: 1
   losses: 1
+  draws: 1
   weight_class: MyString
+  status: MyString
+  title_holder: false
   image: MyString
+  belt_thumbnail: MyString
 
 two:
   full_name: MyString
@@ -15,5 +19,9 @@ two:
   last_name: MyString
   wins: 1
   losses: 1
+  draws: 1
   weight_class: MyString
+  status: MyString
+  title_holder: false
   image: MyString
+  belt_thumbnail: MyString

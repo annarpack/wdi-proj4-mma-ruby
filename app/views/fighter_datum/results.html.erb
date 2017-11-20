@@ -1,8 +1,6 @@
 <%= javascript_include_tag "https://code.jquery.com/jquery-1.12.4.js" %>
 <%= javascript_include_tag "https://code.jquery.com/ui/1.12.1/jquery-ui.js" %>
-
-
-
+<%= stylesheet_link_tag "fights.css" %>
 <h1>Results for Fighters</h1>
 
 <%= form_for :fighters, url: fighters_search_path do |f| %>
@@ -13,18 +11,29 @@
 <% @data.each do |result| %>
 <div class="fighter">
   <h2><%= result[:first_name] %> <%= result[:last_name] %> </h2>
-    <%= image_tag result[:image] %> <br />
-  Weight Class: <%= result[:weight_class] %> <br />
-  Wins: <%= result[:wins] %> <br />
-  Losses: <%= result[:losses] %> <br />
 
+  <% if result[:title_holder] %>
+  <h3><%= result[:weight_class] %> Champion</h3>
+    <%= image_tag result[:belt_thumbnail] %> <br />
+  <% else %>
+    <%= image_tag result[:image] %> <br />
+  <% end %>
+  Status: <%= result[:status] %> <br />
+  Weight Class: <%= result[:weight_class] %> <br />
+  <%= result[:wins] %> WINS /  <%= result[:losses] %> LOSSES / <%= result[:draws] %> DRAWS<br />
+<br />
   <%= form_for :fighter, url: fighters_path, method: "post" do |f| %>
+    <%= f.hidden_field :full_name, value: result[:full_name] %>
     <%= f.hidden_field :first_name, value: result[:first_name] %>
     <%= f.hidden_field :last_name, value: result[:last_name] %>
     <%= f.hidden_field :weight_class, value: result[:weight_class] %>
+    <%= f.hidden_field :title_holder, value: result[:title_holder] %>
+    <%= f.hidden_field :status, value: result[:status] %>
     <%= f.hidden_field :image, value: result[:image] %>
+    <%= f.hidden_field :belt_thumbnail, value: result[:belt_thumbnail] %>
     <%= f.hidden_field :wins, value: result[:wins] %>
     <%= f.hidden_field :losses, value: result[:losses] %>
+    <%= f.hidden_field :draws, value: result[:draws] %>
     <%= f.hidden_field :user_id, value: @current_user.id %>
     <%= f.submit "Save Fighter" %>
   <% end %>
